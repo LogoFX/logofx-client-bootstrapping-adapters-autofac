@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Shouldly;
+using FluentAssertions;
 using Xunit;
 
 namespace LogoFX.Client.Bootstrapping.Adapters.Autofac.Tests
@@ -17,7 +17,7 @@ namespace LogoFX.Client.Bootstrapping.Adapters.Autofac.Tests
             var firstDependency = adapter.Resolve<ITestDependency>();
             var secondDependency = adapter.Resolve<ITestDependency>();
 
-            firstDependency.ShouldNotBeSameAs(secondDependency);
+            firstDependency.Should().NotBeSameAs(secondDependency);
         }
 
         [Fact]
@@ -30,7 +30,7 @@ namespace LogoFX.Client.Bootstrapping.Adapters.Autofac.Tests
             var firstDependency = adapter.Resolve<ITestDependency>();
             var secondDependency = adapter.Resolve<ITestDependency>();
 
-            firstDependency.ShouldBeSameAs(secondDependency);
+            firstDependency.Should().BeSameAs(secondDependency);
         }
     }
 
@@ -45,8 +45,8 @@ namespace LogoFX.Client.Bootstrapping.Adapters.Autofac.Tests
 
             var collection = adapter.Resolve<IEnumerable<ITestDependency>>().ToArray();
 
-            collection.ShouldContain(r => r is TestDependencyA);
-            collection.ShouldContain(r => r is TestDependencyB);
+            collection.Should().Contain(r => r is TestDependencyA);
+            collection.Should().Contain(r => r is TestDependencyB);
         }
 
         [Fact]
@@ -58,8 +58,8 @@ namespace LogoFX.Client.Bootstrapping.Adapters.Autofac.Tests
 
             var collection = adapter.Resolve<IEnumerable<ITestDependency>>().ToArray();            
 
-            collection.ShouldContain(r => r is TestDependencyA);
-            collection.ShouldContain(r => r is TestDependencyB);
+            collection.Should().Contain(r => r is TestDependencyA);
+            collection.Should().Contain(r => r is TestDependencyB);
         }
 
         [Fact]
@@ -73,8 +73,8 @@ namespace LogoFX.Client.Bootstrapping.Adapters.Autofac.Tests
 
             var collection = adapter.Resolve<IEnumerable<ITestDependency>>().ToArray();
            
-            collection.ShouldContain(instanceA);
-            collection.ShouldContain(instanceB);            
+            collection.Should().Contain(instanceA);
+            collection.Should().Contain(instanceB);            
         }
     }
 
