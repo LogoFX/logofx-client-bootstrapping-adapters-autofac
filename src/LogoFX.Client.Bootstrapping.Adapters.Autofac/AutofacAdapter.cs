@@ -108,6 +108,11 @@ namespace LogoFX.Client.Bootstrapping.Adapters.Autofac
             _containerBuilder.RegisterInstance(instance).As(dependencyType).InstancePerLifetimeScope();
         }
 
+        public void RegisterSingleton(Type serviceType, Type implementationType, Func<object> dependencyCreator)
+        {
+            _containerBuilder.Register(c => dependencyCreator()).As(serviceType).InstancePerLifetimeScope();
+        }
+
         /// <summary>
         /// Registers the instance.
         /// </summary>
@@ -116,6 +121,12 @@ namespace LogoFX.Client.Bootstrapping.Adapters.Autofac
         public void RegisterInstance<TService>(TService instance) where TService : class
         {
             _containerBuilder.RegisterInstance(instance).AsSelf().InstancePerLifetimeScope();
+        }
+
+        public void RegisterSingleton<TDependency, TImplementation>(Func<TImplementation> dependencyCreator) 
+            where TImplementation : class, TDependency
+        {
+            _containerBuilder.Register(c => dependencyCreator()).As<TDependency>().InstancePerLifetimeScope();
         }
 
         /// <summary>
@@ -128,6 +139,11 @@ namespace LogoFX.Client.Bootstrapping.Adapters.Autofac
             _containerBuilder.RegisterType(implementationType).As(serviceType).InstancePerLifetimeScope();
         }
 
+        public void RegisterSingleton<TDependency>(Func<TDependency> dependencyCreator) where TDependency : class
+        {
+            _containerBuilder.Register(c => dependencyCreator()).As<TDependency>().InstancePerLifetimeScope();            
+        }
+
         /// <summary>
         /// Registers the singleton.
         /// </summary>
@@ -138,6 +154,11 @@ namespace LogoFX.Client.Bootstrapping.Adapters.Autofac
             _containerBuilder.RegisterType<TImplementation>().As<TService>().InstancePerLifetimeScope();
         }
 
+        public void RegisterTransient<TDependency>(Func<TDependency> dependencyCreator) where TDependency : class
+        {
+            _containerBuilder.Register(c => dependencyCreator()).As<TDependency>().InstancePerDependency();
+        }
+
         /// <summary>
         /// Registers the transient.
         /// </summary>
@@ -146,6 +167,21 @@ namespace LogoFX.Client.Bootstrapping.Adapters.Autofac
         public void RegisterTransient(Type serviceType, Type implementationType)
         {
             _containerBuilder.RegisterType(implementationType).As(serviceType).InstancePerDependency();
+        }
+
+        public void RegisterTransient(Type serviceType, Type implementationType, Func<object> dependencyCreator)
+        {
+            _containerBuilder.Register(c => dependencyCreator()).As(serviceType).InstancePerDependency();
+        }
+
+        public void RegisterSingleton<TDependency>() where TDependency : class
+        {
+            _containerBuilder.RegisterType<TDependency>().AsSelf().InstancePerLifetimeScope();
+        }
+
+        public void RegisterTransient<TDependency, TImplementation>(Func<TImplementation> dependencyCreator) where TImplementation : class, TDependency
+        {
+            _containerBuilder.Register(c => dependencyCreator()).As<TDependency>().InstancePerDependency();
         }
 
         /// <summary>
@@ -202,9 +238,9 @@ namespace LogoFX.Client.Bootstrapping.Adapters.Autofac
                 {
                     var builder = new ContainerBuilder();
                     builder.RegisterType(serviceType).As(serviceType);
-                    var container = _lifetimeScope as IContainer;
-                    if (container != null)
+                    if (_lifetimeScope is IContainer container)
                     {
+                        //TODO: Replace this implementation in the final version
                         builder.Update(container);
                     }
                     
