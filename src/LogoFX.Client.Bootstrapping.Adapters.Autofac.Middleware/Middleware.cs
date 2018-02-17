@@ -4,6 +4,7 @@ using LogoFX.Bootstrapping;
 using LogoFX.Core;
 using Solid.Practices.Middleware;
 
+// ReSharper disable once CheckNamespace
 namespace LogoFX.Client.Bootstrapping.Adapters.Autofac
 {
     /// <summary>

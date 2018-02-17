@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogoFX.Client.Bootstrapping.Adapters.Autofac", "LogoFX.Client.Bootstrapping.Adapters.Autofac\LogoFX.Client.Bootstrapping.Adapters.Autofac.csproj", "{7F17E7E8-F568-4581-95D0-F2BC5DF83C15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogoFX.Client.Bootstrapping.Adapters.Autofac", "LogoFX.Client.Bootstrapping.Adapters.Autofac\LogoFX.Client.Bootstrapping.Adapters.Autofac.csproj", "{6F4991AD-5CDA-47B6-9323-ED8534B87A74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogoFX.Client.Bootstrapping.Adapters.Autofac.Tests", "LogoFX.Client.Bootstrapping.Adapters.Autofac.Tests\LogoFX.Client.Bootstrapping.Adapters.Autofac.Tests.csproj", "{DC6D5556-F34D-4AD0-9A85-859EBEA71F43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogoFX.Client.Bootstrapping.Adapters.Autofac.Middleware", "LogoFX.Client.Bootstrapping.Adapters.Autofac.Middleware\LogoFX.Client.Bootstrapping.Adapters.Autofac.Middleware.csproj", "{5A3FAF2B-53A0-454B-977D-E1B75AB16A56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogoFX.Client.Bootstrapping.Adapters.Autofac.Middleware", "LogoFX.Client.Bootstrapping.Adapters.Autofac.Middleware\LogoFX.Client.Bootstrapping.Adapters.Autofac.Middleware.csproj", "{39C67D01-F324-4385-AD54-315CCDB9DC61}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogoFX.Client.Bootstrapping.Adapters.Autofac.Tests", "LogoFX.Client.Bootstrapping.Adapters.Autofac.Tests\LogoFX.Client.Bootstrapping.Adapters.Autofac.Tests.csproj", "{EC5635BE-81C0-471E-B710-027593F51536}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,20 +15,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7F17E7E8-F568-4581-95D0-F2BC5DF83C15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7F17E7E8-F568-4581-95D0-F2BC5DF83C15}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7F17E7E8-F568-4581-95D0-F2BC5DF83C15}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7F17E7E8-F568-4581-95D0-F2BC5DF83C15}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DC6D5556-F34D-4AD0-9A85-859EBEA71F43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DC6D5556-F34D-4AD0-9A85-859EBEA71F43}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DC6D5556-F34D-4AD0-9A85-859EBEA71F43}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DC6D5556-F34D-4AD0-9A85-859EBEA71F43}.Release|Any CPU.Build.0 = Release|Any CPU
-		{39C67D01-F324-4385-AD54-315CCDB9DC61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{39C67D01-F324-4385-AD54-315CCDB9DC61}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{39C67D01-F324-4385-AD54-315CCDB9DC61}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{39C67D01-F324-4385-AD54-315CCDB9DC61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F4991AD-5CDA-47B6-9323-ED8534B87A74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F4991AD-5CDA-47B6-9323-ED8534B87A74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F4991AD-5CDA-47B6-9323-ED8534B87A74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F4991AD-5CDA-47B6-9323-ED8534B87A74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A3FAF2B-53A0-454B-977D-E1B75AB16A56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A3FAF2B-53A0-454B-977D-E1B75AB16A56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A3FAF2B-53A0-454B-977D-E1B75AB16A56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A3FAF2B-53A0-454B-977D-E1B75AB16A56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC5635BE-81C0-471E-B710-027593F51536}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC5635BE-81C0-471E-B710-027593F51536}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC5635BE-81C0-471E-B710-027593F51536}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC5635BE-81C0-471E-B710-027593F51536}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {80576A90-964E-4617-8353-6F4593430DB0}
 	EndGlobalSection
 EndGlobal

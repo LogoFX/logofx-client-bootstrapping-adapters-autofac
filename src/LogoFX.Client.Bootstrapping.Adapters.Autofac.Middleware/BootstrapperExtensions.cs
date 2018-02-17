@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using LogoFX.Bootstrapping;
 
+// ReSharper disable once CheckNamespace
 namespace LogoFX.Client.Bootstrapping.Adapters.Autofac
 {
     /// <summary>
