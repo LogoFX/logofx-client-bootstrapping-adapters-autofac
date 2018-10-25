@@ -213,6 +213,16 @@ namespace LogoFX.Client.Bootstrapping.Adapters.Autofac
             return _lifetimeScope.Resolve(serviceType);
         }
 
+        public IEnumerable<TDependency> ResolveAll<TDependency>() where TDependency : class
+        {
+            return _lifetimeScope.Resolve<IEnumerable<TDependency>>();
+        }
+
+        public IEnumerable<object> ResolveAll(Type dependencyType)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Resolves this instance.
         /// </summary>
